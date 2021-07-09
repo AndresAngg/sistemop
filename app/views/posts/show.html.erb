@@ -1,0 +1,15 @@
+ 
+<div class="card mb-5" style="width: 60rem;">
+    <div class="card-body">
+        <h5 class="card-title"> <%= @posts.title %> </h5>                    
+        <p class="card-text"> <%= @posts.contenido %> </p>
+        <a href="#" class="btn btn-outline-primary">Like</a>
+    </div>
+    <div class="card-footer text-muted">
+        <%= @posts.created_at %>
+    </div>
+</div>
+<div>
+
+        <a href="/posts" class="btn btn-outline-primary">Atras</a>
+</div>

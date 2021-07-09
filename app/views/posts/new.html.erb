@@ -1,0 +1,27 @@
+<section>
+    <h2 class="text-light">En que piensas?</h2>
+    <%= form_for @posts do |post| %>
+    
+         <div class="mb-3 mt-5 text-light">
+            <%= post.label :"Titulo del post" %> <br>
+            <%= post.text_field :title, :class => "form-control" %>
+        </div>
+         <div class="mb-3 text-light">
+            <%= post.label :"Contenido" %> <br>
+            <%= post.text_area :contenido, :class => "form-control" %>
+        </div>
+        <div>
+            <%= post.submit :class => "btn btn-outline-primary"%>
+        </div>
+         <a href="/posts" class="btn btn-outline-primary mt-5"> Regresar </a>
+        <% if @posts.errors.any?%>
+            <h4>Errores</h4>
+            <ul class='text-light'>
+                <% @posts.errors.full_messages.each do |message|%>
+                <li> <%= message %> </li>
+                <%end%>
+            </ul>
+        <%end%>
+       
+    <%end%>
+</section>
