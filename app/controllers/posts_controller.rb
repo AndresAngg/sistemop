@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
     def index
-      @posts = Post.all     
+      @posts = Post.where user_id: current_user.id
     end
     
     def new
@@ -13,7 +13,8 @@ class PostsController < ApplicationController
     end
     
     def create
-        @posts = Post.new(product_p)
+      @posts = current_user.posts.new post_params
+      
         if @posts.save
           redirect_to posts_path
         else
@@ -22,7 +23,7 @@ class PostsController < ApplicationController
       end
 
       private
-      def product_p
+      def post_params
           params.require(:post).permit(:title, :contenido)
       end
 end

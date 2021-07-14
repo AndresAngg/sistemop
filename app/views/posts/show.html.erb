@@ -1,6 +1,16 @@
  
+<h2>Públicación</h2>
+<ul class="nav nav-pills mb-3 text-light" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="btn btn-outline-light" id="pills-home-tab" data-toggle="pill" href="/" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="btn btn-outline-light" id="pills-profile-tab" data-toggle="pill" href="/posts" role="tab" aria-controls="pills-profile" aria-selected="false">Perfil</a>
+  </li>
+</ul>   
+
 <div class="card mb-5 text-dark" style="width: 60rem;">
-    <div class="card-body">
+    <div class="card-body"> 
         <h5 class="card-title"> <%= @posts.title %> </h5>                    
         <p class="card-text"> <%= @posts.contenido %> </p>
         <a href="#" class="btn btn-outline-dark">Like</a>
@@ -11,5 +21,4 @@
 </div>
 <div>
 
-        <a href="/posts" class="btn btn-outline-light">Atras</a>
 </div>

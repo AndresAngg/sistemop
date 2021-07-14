@@ -1,6 +1,21 @@
+<h5 class="mipr text-light mb-5">Welcome <%= current_user.email %></h5>
 <div class="text-light">
-    
-   
-   <a href="/posts/" class="btn btn-outline-light">Ver publicaciones</a>
-   
+  <a href="/posts/" class="btn btn-outline-light mb-5">Mi perfil</a>
+  <a href="/posts/new" class="btn btn-outline-light mb-5">Pública algo!</a>
+
+  <% @allPosts.each do |post| %>
+    <div class="card mb-5 text-dark" style="width: 60rem;">
+      <div class="card-body">
+        
+        <h5 class="card-title"> Id del usuario <%=  post.user_id %> </h5>
+        <p class="card-text"><b> <%= post.title %>  </b></p>
+        <p class="card-text"> <%= post.contenido %> </p>
+        <a href="#" class="btn btn-outline-dark">Like</a>
+        <%= link_to "Ver post", post, :class=>"btn btn-outline-dark"%>
+      </div>
+      <div class="card-footer text-muted">
+        <%= post.created_at %>
+      </div>
+    </div>
+  <%end%>
 </div>

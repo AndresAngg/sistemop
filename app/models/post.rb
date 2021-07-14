@@ -3,4 +3,5 @@ class Post < ApplicationRecord
     validates :title, length: { maximum: 255 }
     validates :contenido, length: { maximum: 1400 }
     
+    belongs_to :user
 end
