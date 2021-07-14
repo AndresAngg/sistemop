@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    
+  before_action :authenticate_user!
     def index
       @posts = Post.all     
     end
@@ -20,7 +20,6 @@ class PostsController < ApplicationController
           render :new
         end
       end
-      
 
       private
       def product_p

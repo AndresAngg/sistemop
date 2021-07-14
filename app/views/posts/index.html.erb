@@ -1,17 +1,16 @@
-<section>
-    <a href="/posts/new" class="btn btn-outline-primary mb-5">Publica lo que piensas!</a>
+    <h1 class="text-light mb-5">Publicaciones de <%= current_user.email %></h1>
+    <a href="/posts/new" class="btn btn-outline-light mb-5">Publica algo!</a>
      <% @posts.each do |post| %>
-        <div class="card mb-5" style="width: 60rem;">
+        <div class="card mb-5 text-dark" style="width: 60rem;">
             <div class="card-body">
                 <h5 class="card-title"> <%= post.title %> </h5>
                 
                 <p class="card-text"> <%= post.contenido %> </p>
-                <a href="#" class="btn btn-outline-primary">Like</a>
-                <%= link_to "Ver post", post, :class=>"btn btn-outline-primary"%>
+                <a href="#" class="btn btn-outline-dark">Like</a>
+                <%= link_to "Ver post", post, :class=>"btn btn-outline-dark"%>
             </div>
             <div class="card-footer text-muted">
                 <%= post.created_at %>
             </div>
         </div>
      <% end %>
-</section>
